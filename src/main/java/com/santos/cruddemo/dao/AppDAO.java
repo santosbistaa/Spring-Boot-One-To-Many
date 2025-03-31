@@ -1,7 +1,10 @@
 package com.santos.cruddemo.dao;
 
+import com.santos.cruddemo.entity.Course;
 import com.santos.cruddemo.entity.Instructor;
 import com.santos.cruddemo.entity.InstructorDetail;
+
+import java.util.List;
 
 public interface AppDAO {
 
@@ -14,5 +17,11 @@ public interface AppDAO {
     InstructorDetail findInstructionDetailById(int theId);
 
     void deleteInstructorDetailById(int theId);
+
+    // find courses for an instructor
+    List<Course> findCoursesByInstructorId(int theId);
+
+    // JOIN FETCH
+    Instructor findInstrutorByIdJoinFetch(int theId);
 
 }
